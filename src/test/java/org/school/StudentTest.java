@@ -30,4 +30,15 @@ public class StudentTest {
         assertEquals("Bob", students.get(3).getName());
     }
 
+    @Test
+    @DisplayName("Students should sort by name alphabetically")
+    void testSortByName(){
+        students.sort(new StudentNameComparator());
+        assertEquals("Alice", students.get(0).getName());
+        assertEquals("Bob", students.get(1).getName());
+        assertEquals("Charlie", students.get(2).getName());
+        assertEquals("Diana", students.get(3).getName());
+    }
+
+
 }
